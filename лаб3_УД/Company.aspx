@@ -63,7 +63,7 @@
                         <asp:TextBox ID="txbName" runat="server" Width="197px"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txbName" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +72,8 @@
                         <asp:TextBox ID="txbMail" runat="server" Width="197px"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Label ID="lblId" runat="server" Text="Label" Visible="False"></asp:Label>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txbMail" Display="Dynamic" ErrorMessage="Не верный формат" ValidationExpression="\S+@\S+\.\S+"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txbMail" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -81,7 +82,8 @@
                         <asp:TextBox ID="txbPhone" runat="server" Width="193px"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="Button7" runat="server" Enabled="False" OnClick="Button7_Click" Text="Обновить" Width="80px" />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txbPhone" Display="Dynamic" ErrorMessage="Не верный формат" ValidationExpression="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txbPhone" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -91,7 +93,24 @@
                     </td>
                     <td>
                         
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txbSite" Display="Dynamic" ErrorMessage="Не верный формат" ValidationExpression="(([a-z0-9\-\.]+)?[a-z0-9\-]+(!?\.[a-z]{2,4}))"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txbSite" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style11">
+                        
                         <asp:Button ID="btnAdd" runat="server" Text="Добавить" OnClick="btnAdd_Click" Height="25px" />
+                        
+                    </td>
+                    <td class="auto-style9">
+                        <asp:Button ID="Button7" runat="server" Enabled="False" OnClick="Button7_Click" Text="Обновить" Width="80px" />
+                    </td>
+                    <td>
+                        
+                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                        <asp:Label ID="lblId" runat="server" Text="Label" Visible="False"></asp:Label>
                         
                     </td>
                 </tr>

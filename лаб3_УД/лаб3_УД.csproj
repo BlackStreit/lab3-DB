@@ -72,6 +72,7 @@
     <Content Include="EmployeeProf.aspx" />
     <Content Include="ProfCompany.aspx" />
     <Content Include="Profession.aspx" />
+    <Content Include="scripts\js_jquery-1.7.2.min.js" />
     <Content Include="Search1.aspx" />
     <Content Include="Search2.aspx" />
     <Content Include="Web.config" />
@@ -137,6 +138,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

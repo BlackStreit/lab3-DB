@@ -13,11 +13,20 @@ namespace лаб3_УД
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView1.DataKeyNames = new string[] { "id" };
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/jquery-1.7.2.min.js",
+
+            });
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             if (txbSal.Text.Equals(""))
             {
                 lblError.Text = "Вы заполнили не все поля";
@@ -38,6 +47,10 @@ namespace лаб3_УД
         protected void Button7_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             txbSal.Text.Trim();
             if (txbSal.Text.Equals(""))
             {

@@ -77,7 +77,7 @@
                         <asp:TextBox ID="txbName" runat="server" Width="197px"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txbName" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -86,7 +86,9 @@
                         <asp:TextBox ID="txbSalary" runat="server" Width="197px" Height="21px"></asp:TextBox>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txbName" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txbSalary" Display="Dynamic" ErrorMessage="Ошбика значения" MaximumValue="1000000" MinimumValue="5000" Type="Integer"></asp:RangeValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style11">Валюта</td>
@@ -97,7 +99,7 @@
                         </asp:DropDownList>
                     </td>
                     <td>
-                        <asp:Label ID="lblID" runat="server" Text="Label" Visible="False"></asp:Label>
+                        <asp:Label ID="lblError" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -113,7 +115,8 @@
                     </td>
                     <td>
                         
-                        <asp:Button ID="Button7" runat="server" Enabled="False" OnClick="Button7_Click" Text="Обновить" Width="80px" />
+                        <asp:Button ID="btnAdd" runat="server" Text="Добавить" OnClick="btnAdd_Click" />
+                        
                     </td>
                 </tr>
                 <tr>
@@ -129,7 +132,8 @@
                     </td>
                     <td class="auto-style15">
                         
-                        <asp:Button ID="btnAdd" runat="server" Text="Добавить" OnClick="btnAdd_Click" />
+                        <asp:Button ID="Button7" runat="server" Enabled="False" OnClick="Button7_Click" Text="Обновить" Width="80px" />
+                        <asp:Label ID="lblID" runat="server" Text="Label" Visible="False"></asp:Label>
                         
                     </td>
                 </tr>

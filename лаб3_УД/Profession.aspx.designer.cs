@@ -105,13 +105,13 @@ namespace лаб3_УД
         protected global::System.Web.UI.WebControls.TextBox txbName;
 
         /// <summary>
-        /// lblError элемент управления.
+        /// RequiredFieldValidator1 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// txbSalary элемент управления.
@@ -123,6 +123,24 @@ namespace лаб3_УД
         protected global::System.Web.UI.WebControls.TextBox txbSalary;
 
         /// <summary>
+        /// RequiredFieldValidator2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// RangeValidator1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+
+        /// <summary>
         /// cmbCur элемент управления.
         /// </summary>
         /// <remarks>
@@ -132,13 +150,13 @@ namespace лаб3_УД
         protected global::System.Web.UI.WebControls.DropDownList cmbCur;
 
         /// <summary>
-        /// lblID элемент управления.
+        /// lblError элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblID;
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
         /// cmbInd элемент управления.
@@ -150,13 +168,13 @@ namespace лаб3_УД
         protected global::System.Web.UI.WebControls.DropDownList cmbInd;
 
         /// <summary>
-        /// Button7 элемент управления.
+        /// btnAdd элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button7;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
         /// cmbEdu элемент управления.
@@ -168,12 +186,21 @@ namespace лаб3_УД
         protected global::System.Web.UI.WebControls.DropDownList cmbEdu;
 
         /// <summary>
-        /// btnAdd элемент управления.
+        /// Button7 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button Button7;
+
+        /// <summary>
+        /// lblID элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblID;
     }
 }

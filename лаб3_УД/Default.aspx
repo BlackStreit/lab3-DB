@@ -10,15 +10,9 @@
         .auto-style8 {
             height: 25px;
         }
-        .auto-style9 {
-            width: 207px;
-        }
         .auto-style10 {
             width: 207px;
             height: 25px;
-        }
-        .auto-style11 {
-            width: 133px;
         }
         .auto-style12 {
             width: 133px;
@@ -34,6 +28,17 @@
         }
         .auto-style15 {
             height: 27px;
+        }
+        .auto-style16 {
+            width: 133px;
+            height: 28px;
+        }
+        .auto-style17 {
+            width: 207px;
+            height: 28px;
+        }
+        .auto-style18 {
+            height: 28px;
         }
     </style>
 </head>
@@ -87,36 +92,40 @@
                 <tr>
                     <td class="auto-style12">Паспорт</td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="tbxPass" runat="server" Width="197px"></asp:TextBox>
+                        <asp:TextBox ID="tbxPass" runat="server" Width="197px" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
                     </td>
                     <td class="auto-style8">
-                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="tbxPass" Display="Dynamic" ErrorMessage="Ошибка диапазона" MaximumValue="99999999" MinimumValue="1" Type="Integer" ValidateRequestMode="Enabled"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbxPass" Display="Dynamic" ErrorMessage="Вы не заполнили поле" ValidateRequestMode="Enabled"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">Имя</td>
-                    <td class="auto-style9">
-                        <asp:TextBox ID="tbxName" runat="server" Width="197px"></asp:TextBox>
+                    <td class="auto-style12">Имя</td>
+                    <td class="auto-style10">
+                        <asp:TextBox ID="tbxName" runat="server" Width="197px" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style8">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbxName" Display="Dynamic" ErrorMessage="Вы не заполнили поле"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">Отчество</td>
-                    <td class="auto-style9">
-                        <asp:TextBox ID="tbxSName" runat="server" Width="197px"></asp:TextBox>
+                    <td class="auto-style16">Отчество</td>
+                    <td class="auto-style17">
+                        <asp:TextBox ID="tbxSName" runat="server" Width="197px" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td class="auto-style18">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxSName" Display="Dynamic" ErrorMessage="Вы не заполнили поле"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style13">Фамилия</td>
                     <td class="auto-style14">
-                        <asp:TextBox ID="tbxLName" runat="server" Width="197px"></asp:TextBox>
+                        <asp:TextBox ID="tbxLName" runat="server" Width="197px" CausesValidation="True" ValidateRequestMode="Enabled"></asp:TextBox>
                     </td>
                     <td class="auto-style15">
                         
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbxLName" Display="Dynamic" ErrorMessage="Вы не заолнили поле"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style13">Образование</td>
@@ -147,6 +156,7 @@
                     </td>
                     <td class="auto-style8">
                         <asp:Button ID="btnAdd" runat="server" Text="Добавить" OnClick="btnAdd_Click" />
+                        <asp:Label ID="lblError" runat="server"></asp:Label>
                     </td>
                 </tr>
             </table>

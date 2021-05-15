@@ -7,11 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 2px;
-        }
         .auto-style2 {
             width: 11px;
+        }
+        .auto-style3 {
+            width: 18px;
         }
     </style>
 </head>
@@ -49,8 +49,8 @@
                                 <asp:Parameter Name="id" Type="Int32" />
                             </DeleteParameters>
                             <InsertParameters>
-                                <asp:Parameter Name="Profession_id" Type="Int32" />
-                                <asp:Parameter Name="Company_idCompany" Type="Int32" />
+                                <asp:ControlParameter ControlID="cmpProf" Name="Profession_id" PropertyName="SelectedValue" Type="Int32" />
+                                <asp:ControlParameter ControlID="cmdComp" Name="Company_idCompany" PropertyName="SelectedValue" Type="Int32" />
                                 <asp:ControlParameter ControlID="txbSal" Name="Salary" PropertyName="Text" Type="Int32" />
                                 <asp:ControlParameter ControlID="DropDownList2" Name="Schedule" PropertyName="SelectedValue" Type="String" />
                                 <asp:ControlParameter ControlID="DropDownList3" Name="Employment" PropertyName="SelectedValue" Type="String" />
@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Компания</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="cmdComp" runat="server" DataSourceID="SqlDataSource2" DataTextField="CompanyName" DataValueField="idCompany">
                         </asp:DropDownList>
                     </td>
@@ -80,7 +80,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Профессия</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="cmpProf" runat="server" DataSourceID="SqlDataSource3" DataTextField="JobName" DataValueField="id">
                         </asp:DropDownList>
                     </td>
@@ -89,16 +89,18 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Оплатата</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:TextBox ID="txbSal" runat="server" Width="149px"></asp:TextBox>
                     </td>
                     <td class="auto-style11">
                         
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txbSal" Display="Dynamic" ErrorMessage="Это поле пустое"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txbSal" Display="Dynamic" ErrorMessage="Ошибка значения" MaximumValue="1000000" MinimumValue="5000" Type="Integer"></asp:RangeValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Расположение</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="DropDownList1" runat="server">
                             <asp:ListItem>Иркусткая область</asp:ListItem>
                             <asp:ListItem>Московская область</asp:ListItem>
@@ -115,7 +117,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">График</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="DropDownList2" runat="server" Height="21px" Width="154px">
                             <asp:ListItem>2/2</asp:ListItem>
                             <asp:ListItem>5/2</asp:ListItem>
@@ -131,7 +133,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">Занятость</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3">
                         <asp:DropDownList ID="DropDownList3" runat="server" Height="16px" Width="148px">
                             <asp:ListItem>Полная ставка</asp:ListItem>
                             <asp:ListItem>Полставки</asp:ListItem>

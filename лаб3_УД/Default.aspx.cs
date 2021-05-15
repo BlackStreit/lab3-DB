@@ -1,6 +1,8 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace лаб3_УД
@@ -9,12 +11,19 @@ namespace лаб3_УД
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/jquery-1.7.2.min.js",
 
+            });
         }
-
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             try
             {
                 SqlDataSource1.Insert();
@@ -32,6 +41,10 @@ namespace лаб3_УД
         protected void SqlDataSource1_Updating(object sender, SqlDataSourceCommandEventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             try
             {
                 DbParameter[] deleteParam = new DbParameter[6]{

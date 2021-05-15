@@ -12,12 +12,20 @@ namespace лаб3_УД
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/jquery-1.7.2.min.js",
 
+            });
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             try
             {
                 SqlDataSource1.Insert();
@@ -46,6 +54,10 @@ namespace лаб3_УД
         protected void Button7_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!Page.IsValid)
+            {
+                return;
+            }
             txbName.Text.Trim();
             txbSalary.Text.Trim();
             if(txbName.Text.Equals("") || txbSalary.Text.Equals(""))

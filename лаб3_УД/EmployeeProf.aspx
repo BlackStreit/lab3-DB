@@ -49,7 +49,7 @@
                                 <asp:BoundField DataField="region" HeaderText="Регион" SortExpression="region" />
                                 <asp:BoundField DataField="JobName" HeaderText="Нзвание профессии" SortExpression="JobName" />
                                 <asp:BoundField DataField="Industry" HeaderText="Индустрия" SortExpression="Industry" />
-                                <asp:BoundField DataField="Profession_id" HeaderText="Номер профессии" ReadOnly="True" SortExpression="Profession_id" />
+                                <asp:BoundField DataField="Profession_id" HeaderText="Номер профессии" ReadOnly="True" SortExpression="Profession_id" Visible="False" />
                                 <asp:CommandField ShowDeleteButton="True" ShowSelectButton="True" />
                             </Columns>
                         </asp:GridView>
